@@ -1,7 +1,6 @@
 import { createRoute, Link, Outlet } from '@tanstack/react-router'
 import { rootRoute } from '@settings/tanstack-router'
-import { FORGET_ROUTE } from '@features/auth/pages/Forget'
-import { LOGIN_ROUTE } from '@features/auth/pages/Login'
+import { FORGET_ROUTE, LOGIN_ROUTE } from '@features/auth/pages'
 
 function PublicLayout() {
   return (
@@ -17,7 +16,7 @@ function PublicLayout() {
 }
 
 export const publicLayoutRoute = createRoute({
-  getParentRoute: () => rootRoute,
   id: '_public-layout',
+  getParentRoute: () => rootRoute,
   component: PublicLayout,
 })

@@ -1,11 +1,8 @@
 import { createRouter } from '@tanstack/react-router'
 import { rootRoute } from '@settings/tanstack-router'
-import { publicLayoutRoute } from '@shared/layouts/PublicLayout'
-import { privateLayoutRoute } from '@shared/layouts/PrivateLayout'
-import { loginRoute } from '@features/auth/pages/Login'
-import { forgetRoute } from '@features/auth/pages/Forget'
-import { listUsersRoute } from '@features/users/pages/ListUsers'
-import { createUserRoute } from '@features/users/pages/CreateUser'
+import { privateLayoutRoute, publicLayoutRoute } from '@shared/layouts'
+import { forgetRoute, loginRoute } from '@features/auth/pages'
+import { createUserRoute, listUsersRoute } from '@features/users/pages'
 
 const routeTree = rootRoute.addChildren([
   publicLayoutRoute.addChildren([loginRoute, forgetRoute]),

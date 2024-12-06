@@ -1,7 +1,6 @@
 import { rootRoute } from '@settings/tanstack-router'
 import { createRoute, Link, Outlet } from '@tanstack/react-router'
-import { CREATE_USER_ROUTE } from '@features/users/pages/CreateUser'
-import { LIST_USERS_ROUTE } from '@features/users/pages/ListUsers'
+import { CREATE_USER_ROUTE, LIST_USERS_ROUTE } from '@features/users/pages'
 
 function AdminLayout() {
   return (
