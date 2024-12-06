@@ -24,9 +24,9 @@
     "@vitejs/plugin-react-swc": "^3.5.0",
     "eslint": "^9.16.0",
     "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-eslint-comments": "^3.2.0",
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-jsx-a11y": "^6.10.2",
-    "eslint-plugin-no-comments": "^1.1.10",
     "eslint-plugin-react": "^7.37.2",
     "eslint-plugin-react-hooks": "^5.0.0",
     "eslint-plugin-react-refresh": "^0.4.14",
@@ -43,10 +43,10 @@
       "prettier --write"
     ]
   },
-  "packageManager": "pnpm@9.10.0",
   "engines": {
     "node": ">= 20.10.0",
     "npm": "please-use-pnpm",
     "pnpm": ">= 9.10.0"
   }
 }
+

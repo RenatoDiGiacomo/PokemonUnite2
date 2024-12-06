@@ -5,13 +5,14 @@ import jsxA11y from 'eslint-plugin-jsx-a11y'
 import importPlugin from 'eslint-plugin-import'
 import typescriptEslintPlugin from '@typescript-eslint/eslint-plugin'
 import typescriptEslintParser from '@typescript-eslint/parser'
+import eslintComments from 'eslint-plugin-eslint-comments'
 
 export default [
   js.configs.recommended,
   {
     files: ['src/**/*.ts', 'src/**/*.tsx'],
     languageOptions: {
-      parser: typescriptEslintParser, // Parser atualizado para suportar o novo formato
+      parser: typescriptEslintParser,
       ecmaVersion: 'latest',
       sourceType: 'module',
     },
@@ -23,18 +24,14 @@ export default [
       'react-hooks': reactHooks,
       'jsx-a11y': jsxA11y,
       import: importPlugin,
+      'eslint-comments': eslintComments,
+
       '@typescript-eslint': typescriptEslintPlugin,
     },
     rules: {
-      'no-undef': 'off',
-      'no-console': ['error', { allow: ['warn', 'error'] }],
-      'padding-line-between-statements': [
-        'error',
-        { blankLine: 'always', prev: '*', next: 'return' },
-        { blankLine: 'always', prev: '*', next: 'block-like' },
-        { blankLine: 'always', prev: 'block-like', next: '*' },
-      ],
       '@typescript-eslint/no-empty-function': 'warn',
+      'eslint-comments/no-use': ['error', { allow: [] }],
+      'import/no-unused-modules': 'error',
       'import/order': [
         'error',
         {
@@ -51,6 +48,14 @@ export default [
           alphabetize: { order: 'asc', caseInsensitive: true },
         },
       ],
+      'no-undef': 'off',
+      'no-console': ['error', { allow: ['warn', 'error'] }],
+      'padding-line-between-statements': [
+        'error',
+        { blankLine: 'always', prev: '*', next: 'return' },
+        { blankLine: 'always', prev: '*', next: 'block-like' },
+        { blankLine: 'always', prev: 'block-like', next: '*' },
+      ],
       'react/jsx-sort-props': [
         'error',
         { callbacksLast: true, shorthandLast: true },
@@ -59,7 +64,7 @@ export default [
       'react/function-component-definition': [
         'error',
         {
-          namedComponents: 'arrow-function',
+          namedComponents: 'function-declaration',
           unnamedComponents: 'arrow-function',
         },
       ],
