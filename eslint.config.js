@@ -11,6 +11,7 @@ export default [
   js.configs.recommended,
   {
     files: ['src/**/*.ts', 'src/**/*.tsx'],
+    ignores: ['src/**/*.d.ts'],
     languageOptions: {
       parser: typescriptEslintParser,
       ecmaVersion: 'latest',
@@ -29,7 +30,7 @@ export default [
       '@typescript-eslint': typescriptEslintPlugin,
     },
     rules: {
-      '@typescript-eslint/no-empty-function': 'warn',
+      '@typescript-eslint/no-empty-function': 'error',
       'eslint-comments/no-use': ['error', { allow: [] }],
       'import/no-unused-modules': 'error',
       'import/order': [
@@ -48,8 +49,9 @@ export default [
           alphabetize: { order: 'asc', caseInsensitive: true },
         },
       ],
-      'no-undef': 'off',
       'no-console': ['error', { allow: ['warn', 'error'] }],
+      'no-empty': ['error', { allowEmptyCatch: true }],
+      'no-undef': 'off',
       'padding-line-between-statements': [
         'error',
         { blankLine: 'always', prev: '*', next: 'return' },
@@ -78,4 +80,3 @@ export default [
     },
   },
 ]
-
