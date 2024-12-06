@@ -8,6 +8,12 @@ Este é um template base para projetos simples utilizando Vite e React. Ele foi 
 - pnpm (versão 9.12.13 ou superior)
 - Docker (versão 26.1.4 ou superior) ou Docker Desktop instalado
 
+## Design System
+
+Este projeto foi desenvolvido utilizando os componentes do Design System `ISTIC UI`, onde a documentação dos componentes disponíveis está no link abaixo:
+
+(https://frontdesignsystem.azurewebsites.net/?path=/docs/istic-ui-introdu%C3%A7%C3%A3o--documentation)[https://frontdesignsystem.azurewebsites.net/?path=/docs/istic-ui-introdu%C3%A7%C3%A3o--documentation]
+
 ## Passo a Passo para Execução do Projeto
 
 1. **Clone o repositório:**
@@ -60,3 +66,4 @@ Sinta-se à vontade para contribuir com este projeto. Faça um fork do repositó
 ## Licença
 
 Este projeto está licenciado sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
