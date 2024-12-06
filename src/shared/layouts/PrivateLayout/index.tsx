@@ -21,4 +21,3 @@ export const privateLayoutRoute = createRoute({
   getParentRoute: () => rootRoute,
   component: AdminLayout,
 })
-

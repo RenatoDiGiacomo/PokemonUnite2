@@ -21,4 +21,3 @@ export const publicLayoutRoute = createRoute({
   id: '_public-layout',
   component: PublicLayout,
 })
-

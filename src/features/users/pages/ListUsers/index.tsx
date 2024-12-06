@@ -16,4 +16,3 @@ export const listUsersRoute = createRoute({
   getParentRoute: () => privateLayoutRoute,
   component: ListUsersPage,
 })
-

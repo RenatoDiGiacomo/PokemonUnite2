@@ -17,4 +17,3 @@ export const loginRoute = createRoute({
   getParentRoute: () => publicLayoutRoute,
   component: LoginPage,
 })
-

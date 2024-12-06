@@ -16,4 +16,3 @@ export const forgetRoute = createRoute({
   getParentRoute: () => publicLayoutRoute,
   component: ForgetPage,
 })
-
