@@ -11,7 +11,7 @@ export default [
   js.configs.recommended,
   {
     files: ['src/**/*.ts', 'src/**/*.tsx'],
-    ignores: ['src/**/*.d.ts'],
+    ignores: ['src/**/*.d.ts', 'src/**/*.gen.ts'],
     languageOptions: {
       parser: typescriptEslintParser,
       ecmaVersion: 'latest',
@@ -46,7 +46,6 @@ export default [
             'object',
           ],
           'newlines-between': 'always',
-          alphabetize: { order: 'asc', caseInsensitive: true },
         },
       ],
       'no-console': ['error', { allow: ['warn', 'error'] }],
@@ -58,23 +57,12 @@ export default [
         { blankLine: 'always', prev: '*', next: 'block-like' },
         { blankLine: 'always', prev: 'block-like', next: '*' },
       ],
-      'react/jsx-sort-props': [
-        'error',
-        { callbacksLast: true, shorthandLast: true },
-      ],
       'react/require-default-props': 'error',
       'react/function-component-definition': [
         'error',
         {
           namedComponents: 'function-declaration',
           unnamedComponents: 'arrow-function',
-        },
-      ],
-      'sort-imports': [
-        'error',
-        {
-          ignoreDeclarationSort: true,
-          ignoreMemberSort: false,
         },
       ],
     },
