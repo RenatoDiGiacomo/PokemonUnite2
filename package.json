@@ -6,7 +6,6 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "lint": "eslint ./src && prettier ./src",
     "preview": "vite preview",
     "preinstall": "npx only-allow pnpm",
     "type:check": "tsc --noEmit --skipLibCheck"
@@ -48,8 +47,11 @@
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx}": [
-      "eslint --fix",
+      "eslint --max-warnings=0",
       "prettier --write"
+    ],
+    "**/*.{html,json,css,scss,md,mdx}": [
+      "prettier -w"
     ]
   },
   "engines": {
@@ -58,4 +60,3 @@
     "pnpm": ">= 9.10.0"
   }
 }
-
