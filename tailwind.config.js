@@ -13,17 +13,17 @@ export default {
         info: '#00adf2',
         error: '#fc3932',
 
-        'brand-950': '#0B1B7A',
-        'brand-900': '#0B1B7A',
-        'brand-800': '#132893',
-        'brand-700': '#1F3CB7',
-        'brand-600': '#2D52DB',
-        'brand-500': '#3E6CFF',
-        'brand-400': '#6E94FF',
-        'brand-300': '#8BACFF',
-        'brand-200': '#B1C9FF',
-        'brand-100': '#D8E5FF',
-        'brand-50': '#F4F7FF',
+        'brand-950': '#300b6a',
+        'brand-900': '#4e169c',
+        'brand-800': '#5e18bf',
+        'brand-700': '#711ee3',
+        'brand-600': '#7f30f7',
+        'brand-500': '#8c52ff',
+        'brand-400': '#a885ff',
+        'brand-300': '#c4b1ff',
+        'brand-200': '#dcd4ff',
+        'brand-100': '#ede8ff',
+        'brand-50': '#f5f2ff',
 
         'neutral-950': '#212529',
         'neutral-900': '#212529',
@@ -144,4 +144,3 @@ export default {
   },
   plugins: [],
 }
-

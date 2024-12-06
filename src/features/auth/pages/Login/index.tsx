@@ -1,13 +1,9 @@
-import { createRoute, Link } from '@tanstack/react-router'
+import { createRoute } from '@tanstack/react-router'
 import { publicLayoutRoute } from '@shared/layouts/PublicLayout'
+import LoginForm from '@features/auth/components/LoginForm'
 
 function LoginPage() {
-  return (
-    <div className="p-2">
-      <h3>Login</h3>
-      <Link to="/users">Entrar no sistema</Link>
-    </div>
-  )
+  return <LoginForm />
 }
 
 export const LOGIN_ROUTE = '/'
