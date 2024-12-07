@@ -7,3 +7,11 @@ body,
 #root {
   height: 100%;
 }
+
+body {
+  background-color: #f7f8f9;
+}
+
+.private-layout-height {
+  height: calc(100vh - 96px);
+}

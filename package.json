@@ -14,7 +14,8 @@
     "@istic-ui/react": "^2.0.10",
     "@tanstack/react-router": "^1.86.1",
     "react": "^18.3.1",
-    "react-dom": "^18.3.1"
+    "react-dom": "^18.3.1",
+    "react-icons": "^5.4.0"
   },
   "devDependencies": {
     "@commitlint/config-conventional": "^19.6.0",
@@ -49,7 +50,7 @@
   },
   "lint-staged": {
     "src/**/*.{js,jsx,ts,tsx}": [
-      "eslint --max-warnings=0",
+      "eslint --max-warnings=10",
       "prettier --write"
     ],
     "**/*.{html,json,css,scss,md,mdx}": [

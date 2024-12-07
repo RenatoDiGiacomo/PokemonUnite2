@@ -11,7 +11,7 @@ export default [
   js.configs.recommended,
   {
     files: ['src/**/*.ts', 'src/**/*.tsx'],
-    ignores: ['src/**/*.d.ts', 'src/**/*.gen.ts'],
+    ignores: ['src/vite-env.d.ts'],
     languageOptions: {
       parser: typescriptEslintParser,
       ecmaVersion: 'latest',

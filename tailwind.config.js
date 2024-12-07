@@ -25,6 +25,18 @@ export default {
         'brand-100': '#ede8ff',
         'brand-50': '#f5f2ff',
 
+        'secondary-950': '#002f33',
+        'secondary-900': '#0d5354',
+        'secondary-800': '#0a6365',
+        'secondary-700': '#057f80',
+        'secondary-600': '#00a8a8',
+        'secondary-500': '#04c8c3',
+        'secondary-400': '#1de4dd',
+        'secondary-300': '#51f7ec',
+        'secondary-200': '#90fff3',
+        'secondary-100': '#c7fff9',
+        'secondary-50': '#effefc',
+
         'neutral-950': '#212529',
         'neutral-900': '#212529',
         'neutral-800': '#343a40',
