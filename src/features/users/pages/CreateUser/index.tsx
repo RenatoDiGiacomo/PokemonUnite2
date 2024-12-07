@@ -9,10 +9,10 @@ function CreateUserPage() {
   )
 }
 
-export const CREATE_USER_ROUTE = '/users/create'
+export const CREATE_USER_PAGE_ROUTE = '/users/create'
 
-export const createUserRoute = createRoute({
-  path: CREATE_USER_ROUTE,
+export const CreateUserRoute = createRoute({
+  path: CREATE_USER_PAGE_ROUTE,
   getParentRoute: () => PrivateRoutes,
   component: CreateUserPage,
 })

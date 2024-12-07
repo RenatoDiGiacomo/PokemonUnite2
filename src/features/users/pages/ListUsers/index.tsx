@@ -9,10 +9,10 @@ function ListUsersPage() {
   )
 }
 
-export const LIST_USERS_ROUTE = '/users'
+export const LIST_USERS_PAGE_ROUTE = '/users'
 
-export const listUsersRoute = createRoute({
-  path: LIST_USERS_ROUTE,
+export const ListUsersRoute = createRoute({
+  path: LIST_USERS_PAGE_ROUTE,
   getParentRoute: () => PrivateRoutes,
   component: ListUsersPage,
 })
