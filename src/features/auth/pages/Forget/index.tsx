@@ -1,5 +1,5 @@
 import { createRoute } from '@tanstack/react-router'
-import { publicLayoutRoute } from '@shared/layouts/PublicLayout'
+import { PublicRoutes } from '@shared/layouts/PublicLayout'
 
 function ForgetPage() {
   return (
@@ -13,6 +13,6 @@ export const FORGET_ROUTE = '/forget'
 
 export const forgetRoute = createRoute({
   path: FORGET_ROUTE,
-  getParentRoute: () => publicLayoutRoute,
+  getParentRoute: () => PublicRoutes,
   component: ForgetPage,
 })

@@ -1,5 +1,5 @@
 import { createRoute } from '@tanstack/react-router'
-import { privateLayoutRoute } from '@shared/layouts/PrivateLayout'
+import { PrivateRoutes } from '@shared/layouts/PrivateLayout'
 
 function CreateUserPage() {
   return (
@@ -13,6 +13,6 @@ export const CREATE_USER_ROUTE = '/users/create'
 
 export const createUserRoute = createRoute({
   path: CREATE_USER_ROUTE,
-  getParentRoute: () => privateLayoutRoute,
+  getParentRoute: () => PrivateRoutes,
   component: CreateUserPage,
 })

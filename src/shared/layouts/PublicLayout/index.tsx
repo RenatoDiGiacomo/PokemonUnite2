@@ -24,7 +24,7 @@ function PublicLayout() {
   )
 }
 
-export const publicLayoutRoute = createRoute({
+export const PublicRoutes = createRoute({
   id: '_public-layout',
   getParentRoute: () => rootRoute,
   component: PublicLayout,

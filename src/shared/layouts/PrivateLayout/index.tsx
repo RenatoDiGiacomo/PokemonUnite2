@@ -15,7 +15,7 @@ function PrivateLayout() {
   )
 }
 
-export const privateLayoutRoute = createRoute({
+export const PrivateRoutes = createRoute({
   id: '_private-layout',
   getParentRoute: () => rootRoute,
   component: PrivateLayout,

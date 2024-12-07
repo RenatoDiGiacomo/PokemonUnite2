@@ -1,5 +1,5 @@
 import { createRoute } from '@tanstack/react-router'
-import { publicLayoutRoute } from '@shared/layouts/PublicLayout'
+import { PublicRoutes } from '@shared/layouts/PublicLayout'
 import LoginForm from '@features/auth/components/LoginForm'
 
 function LoginPage() {
@@ -10,6 +10,6 @@ export const LOGIN_ROUTE = '/'
 
 export const loginRoute = createRoute({
   path: LOGIN_ROUTE,
-  getParentRoute: () => publicLayoutRoute,
+  getParentRoute: () => PublicRoutes,
   component: LoginPage,
 })
