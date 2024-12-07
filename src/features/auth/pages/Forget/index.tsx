@@ -9,10 +9,10 @@ function ForgetPage() {
   )
 }
 
-export const FORGET_ROUTE = '/forget'
+export const FORGET_PAGE_ROUTE = '/forget'
 
-export const forgetRoute = createRoute({
-  path: FORGET_ROUTE,
+export const ForgetRoute = createRoute({
+  path: FORGET_PAGE_ROUTE,
   getParentRoute: () => PublicRoutes,
   component: ForgetPage,
 })

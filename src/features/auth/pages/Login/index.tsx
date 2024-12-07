@@ -6,10 +6,10 @@ function LoginPage() {
   return <LoginForm />
 }
 
-export const LOGIN_ROUTE = '/'
+export const LOGIN_PAGE_ROUTE = '/'
 
-export const loginRoute = createRoute({
-  path: LOGIN_ROUTE,
+export const LoginRoute = createRoute({
+  path: LOGIN_PAGE_ROUTE,
   getParentRoute: () => PublicRoutes,
   component: LoginPage,
 })
