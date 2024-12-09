@@ -1,31 +1,18 @@
-import { RiOpenArmLine, RiWalkLine } from 'react-icons/ri'
-
-import MenuItem, { MenuItemProps } from '../MenuItem'
+import MenuItem from '../MenuItem'
 import Logo from '../Logo'
+
+import { menuItems } from './Menu.constants'
 
 interface MenuProps {
   opened: boolean
   toggle: () => void
 }
 
-const menuItems: MenuItemProps[] = [
-  {
-    icon: <RiOpenArmLine />,
-    label: 'Exercícios',
-    to: '/exercises',
-  },
-  {
-    icon: <RiWalkLine />,
-    label: 'Treino',
-    to: '/training',
-  },
-]
-
 function Menu({ opened, toggle }: Readonly<MenuProps>) {
   return (
     <>
       <div
-        className={`absolute size-full transition-opacity bg-black ${opened ? 'opacity-0 hidden' : 'opacity-70'} `}
+        className={`absolute size-full transition-opacity bg-black ${opened ? 'opacity-0 hidden' : 'opacity-70'} md:bg-transparent`}
         onClick={toggle}
       ></div>
       <aside
