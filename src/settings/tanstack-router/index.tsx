@@ -1,7 +1,21 @@
-import { createRootRoute, Link, Outlet } from '@tanstack/react-router'
+import {
+  createRootRoute,
+  createRouter,
+  Link,
+  Outlet,
+} from '@tanstack/react-router'
 import { TanStackRouterDevtools } from '@tanstack/router-devtools'
+import { Icon } from '@istic-ui/react'
+import { PrivateRoutes, PublicRoutes } from '@shared/layouts'
+import {
+  ForgetRoute,
+  LoginRoute,
+  PrivacyRoute,
+} from '@shared/authentication/pages'
+import { CreateUserRoute, ListUsersRoute } from '@features/users/pages'
+import { MenuItemProps } from '@shared/components/MenuItem'
 
-export const rootRoute = createRootRoute({
+const rootRoute = createRootRoute({
   component: () => (
     <>
       <Outlet />
@@ -15,3 +29,22 @@ export const rootRoute = createRootRoute({
     </div>
   ),
 })
+
+const routeTree = rootRoute.addChildren([
+  PublicRoutes.addChildren([LoginRoute, ForgetRoute, PrivacyRoute]),
+  PrivateRoutes.addChildren([ListUsersRoute, CreateUserRoute]),
+])
+
+const router = createRouter({
+  routeTree,
+})
+
+const menuItems: MenuItemProps[] = [
+  {
+    icon: <Icon name="group" />,
+    label: 'Usuários',
+    to: '/users',
+  },
+]
+
+export { rootRoute, router, menuItems }

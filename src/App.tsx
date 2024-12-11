@@ -1,7 +1,6 @@
 import { RouterProvider } from '@tanstack/react-router'
 import { AuthProvider } from '@shared/authentication/context'
-
-import { router } from './routes/__root'
+import { router } from '@settings/tanstack-router'
 
 function App() {
   return (

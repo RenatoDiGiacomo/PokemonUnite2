@@ -1,5 +1,5 @@
 import React, { createContext, useState } from 'react'
-import { router } from 'src/routes/__root'
+import { router } from '@settings/tanstack-router'
 
 import authService from '../services/auth.service'
 import { AuthUser } from '../types'

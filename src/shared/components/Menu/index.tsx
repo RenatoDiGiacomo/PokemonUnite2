@@ -1,4 +1,4 @@
-import { menuItems } from 'src/routes/__root'
+import { menuItems } from '@settings/tanstack-router'
 
 import MenuItem from '../MenuItem'
 import Logo from '../Logo'
