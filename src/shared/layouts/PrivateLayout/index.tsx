@@ -14,7 +14,7 @@ function PrivateLayout() {
     if (!authenticated) {
       navigate({ to: '/' })
     }
-  }, [])
+  }, [authenticated])
 
   return (
     <div className="h-full flex">

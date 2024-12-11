@@ -1,8 +1,16 @@
-import React, { createContext, useState } from 'react'
+import {
+  createContext,
+  ReactNode,
+  useContext,
+  useEffect,
+  useMemo,
+  useState,
+} from 'react'
 import { router } from '@settings/tanstack-router'
+import { usePromise } from '@shared/hooks'
 
-import authService from '../services/auth.service'
 import { AuthUser } from '../types'
+import authService from '../services/auth.service'
 
 import { AuthContextType } from './types'
 
@@ -19,15 +27,10 @@ export const AuthContext = createContext<AuthContextType>(
   authContextInitialState,
 )
 
-export function AuthProvider({
-  children,
-}: {
-  readonly children: React.ReactNode
-}) {
+export function AuthProvider({ children }: { readonly children: ReactNode }) {
   const [authenticated, setAuthenticated] = useState<boolean>(false)
-  const [loading, setLoading] = useState<boolean>(false)
-  const [error, setError] = useState<string | null>(null)
   const [user, setUser] = useState<AuthUser | null>(null)
+  const { handle, error, loading } = usePromise()
 
   const signIn = async (email: string, password: string) => {
     await handle(async () => {
@@ -40,6 +43,7 @@ export function AuthProvider({
   const signOut = async () => {
     await handle(async () => {
       await authService.logout()
+      setAuthenticated(false)
       router.navigate({ to: '/' })
     })
   }
@@ -48,20 +52,7 @@ export function AuthProvider({
     await handle(() => authService.recovery(email))
   }
 
-  const handle = async (fn: () => Promise<void>) => {
-    setLoading(true)
-
-    try {
-      await fn()
-    } catch (error) {
-      const { message } = error as Error
-      setError(message)
-    } finally {
-      setLoading(false)
-    }
-  }
-
-  const value = React.useMemo(
+  const value = useMemo(
     () => ({
       ...authContextInitialState,
       authenticated,
@@ -75,7 +66,7 @@ export function AuthProvider({
     [authenticated, error, loading, user],
   )
 
-  React.useEffect(() => {
+  useEffect(() => {
     const checkAuth = async () => {
       const isAuthenticated = await authService.isAuthenticated()
       const user = await authService.getUser()
@@ -96,7 +87,7 @@ export function AuthProvider({
 }
 
 export function useAuth() {
-  const context = React.useContext(AuthContext)
+  const context = useContext(AuthContext)
 
   if (context === undefined) {
     throw new Error('useAuth must be used within an AuthProvider')

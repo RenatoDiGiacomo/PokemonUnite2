@@ -15,7 +15,7 @@ function PublicLayout() {
     if (authenticated) {
       navigate({ to: VITE_HOME_PAGE })
     }
-  }, [])
+  }, [authenticated])
 
   return (
     <div className="h-full grid grid-cols-1 md:grid-cols-2">
