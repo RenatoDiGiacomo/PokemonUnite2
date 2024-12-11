@@ -1,3 +1,5 @@
+import { RiOpenArmLine } from 'react-icons/ri'
+import { MenuItemProps } from '@shared/components/MenuItem'
 import {
   createRootRoute,
   createRouter,
@@ -5,15 +7,17 @@ import {
   Outlet,
 } from '@tanstack/react-router'
 import { TanStackRouterDevtools } from '@tanstack/router-devtools'
-import { Icon } from '@istic-ui/react'
 import { PrivateRoutes, PublicRoutes } from '@shared/layouts'
 import {
   ForgetRoute,
   LoginRoute,
   PrivacyRoute,
 } from '@shared/authentication/pages'
-import { CreateUserRoute, ListUsersRoute } from '@features/users/pages'
-import { MenuItemProps } from '@shared/components/MenuItem'
+import {
+  CreateExercisesRoute,
+  EditExercisesRoute,
+  ListExercisesRoute,
+} from '@features/exercises/pages'
 
 const rootRoute = createRootRoute({
   component: () => (
@@ -32,7 +36,11 @@ const rootRoute = createRootRoute({
 
 const routeTree = rootRoute.addChildren([
   PublicRoutes.addChildren([LoginRoute, ForgetRoute, PrivacyRoute]),
-  PrivateRoutes.addChildren([ListUsersRoute, CreateUserRoute]),
+  PrivateRoutes.addChildren([
+    ListExercisesRoute,
+    CreateExercisesRoute,
+    EditExercisesRoute,
+  ]),
 ])
 
 const router = createRouter({
@@ -41,9 +49,9 @@ const router = createRouter({
 
 const menuItems: MenuItemProps[] = [
   {
-    icon: <Icon name="group" />,
-    label: 'Usuários',
-    to: '/users',
+    icon: <RiOpenArmLine />,
+    label: 'Exercícios',
+    to: '/exercises',
   },
 ]
 
