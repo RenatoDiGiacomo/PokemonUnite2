@@ -26,11 +26,12 @@ export default [
       'jsx-a11y': jsxA11y,
       import: importPlugin,
       'eslint-comments': eslintComments,
-
       '@typescript-eslint': typescriptEslintPlugin,
     },
     rules: {
       '@typescript-eslint/no-empty-function': 'error',
+      '@typescript-eslint/no-unused-vars': 'error',
+      'no-unused-vars': 'off',
       'eslint-comments/no-use': ['error', { allow: [] }],
       'import/no-unused-modules': 'error',
       'import/order': [

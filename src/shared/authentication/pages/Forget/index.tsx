@@ -1,10 +1,11 @@
 import { createRoute } from '@tanstack/react-router'
 import { PublicRoutes } from '@shared/layouts/PublicLayout'
+import ForgetForm from '@shared/authentication/components/ForgetForm'
 
 function ForgetPage() {
   return (
     <div className="p-2">
-      <h3>Esqueci minha senha</h3>
+      <ForgetForm />
     </div>
   )
 }

@@ -1,7 +1,7 @@
+import { menuItems } from 'src/routes/__root'
+
 import MenuItem from '../MenuItem'
 import Logo from '../Logo'
-
-import { menuItems } from './Menu.constants'
 
 interface MenuProps {
   opened: boolean

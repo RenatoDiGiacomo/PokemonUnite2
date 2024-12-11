@@ -1,11 +1,20 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
+import { createRoute, Outlet, useNavigate } from '@tanstack/react-router'
 import { rootRoute } from '@settings/tanstack-router'
-import { createRoute, Outlet } from '@tanstack/react-router'
+import { useAuth } from '@shared/authentication/context'
 import Menu from '@shared/components/Menu'
 import Header from '@shared/components/Header'
 
 function PrivateLayout() {
   const [opened, setOpened] = useState(false)
+  const { authenticated } = useAuth()
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    if (!authenticated) {
+      navigate({ to: '/' })
+    }
+  }, [])
 
   return (
     <div className="h-full flex">

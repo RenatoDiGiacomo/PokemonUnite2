@@ -12,6 +12,7 @@ export default {
         warning: '#fcb019',
         info: '#00adf2',
         error: '#fc3932',
+        muted: '#A0A4A8',
 
         'brand-950': '#300b6a',
         'brand-900': '#4e169c',

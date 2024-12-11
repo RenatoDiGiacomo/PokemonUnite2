@@ -1,11 +1,22 @@
-import { createRoute, Link, Outlet } from '@tanstack/react-router'
+import { useEffect } from 'react'
+import { createRoute, Link, Outlet, useNavigate } from '@tanstack/react-router'
 import { rootRoute } from '@settings/tanstack-router'
+import { LOGIN_PAGE_ROUTE } from '@shared/authentication/pages'
+import { useAuth } from '@shared/authentication/context'
 import logo from '@assets/login-logo.png'
-import { LOGIN_PAGE_ROUTE } from '@features/auth/pages'
 
-const { VITE_APP_NAME } = import.meta.env
+const { VITE_APP_NAME, VITE_HOME_PAGE } = import.meta.env
 
 function PublicLayout() {
+  const { authenticated } = useAuth()
+  const navigate = useNavigate()
+
+  useEffect(() => {
+    if (authenticated) {
+      navigate({ to: VITE_HOME_PAGE })
+    }
+  }, [])
+
   return (
     <div className="h-full grid grid-cols-1 md:grid-cols-2">
       <div className="bg-brand-50 flex justify-center items-center row-span-1">

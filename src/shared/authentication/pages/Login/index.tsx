@@ -1,6 +1,6 @@
 import { createRoute } from '@tanstack/react-router'
 import { PublicRoutes } from '@shared/layouts/PublicLayout'
-import LoginForm from '@features/auth/components/LoginForm'
+import LoginForm from '@shared/authentication/components/LoginForm'
 
 function LoginPage() {
   return <LoginForm />
