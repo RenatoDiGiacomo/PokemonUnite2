@@ -42,6 +42,10 @@ pnpm install
 
 Link para a documentação do pnpm: [https://pnpm.io/pt/](https://pnpm.io/pt/)
 
+4. **Crie o arquivo .env do projeto:**
+
+Copie o arquivo `.env.example` e renomeie para `.env`
+
 4. **Execute o projeto:**
 
 Com pnpm:
