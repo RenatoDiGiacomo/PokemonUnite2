@@ -108,7 +108,7 @@ Lembre-se sempre de atualizar os valores das variáveis para as necessidades do 
 Após a imagem ser gerada com sucesso, você pode rodar um container do projeto com o comando a seguir:
 
 ```bash
-docker run -p 80:80 2025-base-vite-front-react
+docker run -p 80:80 -d 2025-base-vite-front-react
 ```
 
 Agora acesse o link [http://localhost](http://localhost) para acessar o projeto no seu navegador.
