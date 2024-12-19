@@ -74,4 +74,5 @@ jobs:
         uses: cypress-io/github-action@v6
         with:
           build: pnpm build
-          start: pnpm start
+          start: npx vite --host
+          wait-on: 'http://localhost:3000'

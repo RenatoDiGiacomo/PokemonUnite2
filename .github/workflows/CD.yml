@@ -32,7 +32,7 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache: "pnpm"
+          cache: 'pnpm'
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
@@ -41,7 +41,7 @@ jobs:
         run: pnpm build
 
       - name: Build Docker image
-        run: docker build -t nextjs15-boilerplate .
+        run: docker build --build-arg VITE_APP_NAME="Vite App" --build-arg VITE_AUTH_STORAGE_KEY="auth" --build-arg VITE_BACKEND_API_URL="http://localhost:5000" --build-arg VITE_HOME_PAGE="/users" -t 2025-base-vite-front-react .
 
       #
       # Exemplo de deploy da imagem do projeto para o Docker Hub e Kubernetes
@@ -56,3 +56,4 @@ jobs:
       #   run: |
       #     kubectl set image deployment/nextjs15-boilerplate nextjs15-boilerplate="${{ secrets.DOCKER_USERNAME }}/nextjs15-boilerplate:latest"
       #     kubectl rollout status deployment/nextjs15-boilerplate
+
