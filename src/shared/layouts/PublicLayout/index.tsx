@@ -1,11 +1,11 @@
 import { useEffect } from 'react'
-import { createRoute, Link, Outlet, useNavigate } from '@tanstack/react-router'
+import { createRoute, Outlet, useNavigate } from '@tanstack/react-router'
 import { rootRoute } from '@settings/tanstack-router'
-import { LOGIN_PAGE_ROUTE } from '@shared/authentication/pages'
+// import { LOGIN_PAGE_ROUTE } from '@shared/authentication/pages'
 import { useAuth } from '@shared/authentication/context'
-import logo from '@assets/login-logo.png'
+import video from '@assets/pokemonMovie_1.mp4'
 
-const { VITE_APP_NAME, VITE_HOME_PAGE } = import.meta.env
+const { VITE_HOME_PAGE } = import.meta.env
 
 function PublicLayout() {
   const { authenticated } = useAuth()
@@ -20,13 +20,19 @@ function PublicLayout() {
   return (
     <div className="h-full grid grid-cols-1 md:grid-cols-2">
       <div className="bg-brand-50 flex justify-center items-center row-span-1">
-        <Link to={LOGIN_PAGE_ROUTE}>
-          <img
-            src={logo}
-            alt={VITE_APP_NAME}
-            className="w-[250px] h-[75px] md:w-[497px] md:h-[149px]"
-          />
-        </Link>
+        <video
+          style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            filter: 'brightness(0.5)',
+          }}
+          autoPlay
+          loop
+          muted
+        >
+          <source src={video} type="video/mp4" />
+        </video>
       </div>
       <div className="bg-brand-500 flex justify-center items-start md:items-center row-span-3 md:row-span-1 p-8">
         <Outlet />
