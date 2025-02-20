@@ -19,7 +19,7 @@ function PublicLayout() {
 
   return (
     <div className="h-full grid grid-cols-1 md:grid-cols-2">
-      <div className="bg-brand-50 flex justify-center items-center row-span-1">
+      <div className="flex justify-center items-center row-span-1">
         <video
           style={{
             width: '100%',
@@ -34,7 +34,7 @@ function PublicLayout() {
           <source src={video} type="video/mp4" />
         </video>
       </div>
-      <div className="bg-brand-500 flex justify-center items-start md:items-center row-span-3 md:row-span-1 p-8">
+      <div className="flex justify-center items-start md:items-center row-span-3 md:row-span-1 p-8">
         <Outlet />
       </div>
     </div>

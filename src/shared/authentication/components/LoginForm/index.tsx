@@ -8,11 +8,14 @@ import {
   PRIVACY_PAGE_ROUTE,
 } from '@shared/authentication/pages'
 import { useAuth } from '@shared/authentication/context'
+import Banner from "@assets/Banner1.svg"
 
 const LoginFormSchema = z.object({
   email: z.string().min(1, 'Campo Obrigatório').email('E-mail inválido'),
   password: z.string().min(4, 'A senha deve ter no mínimo 4 caracteres'),
 })
+
+
 
 type LoginFormType = z.infer<typeof LoginFormSchema>
 
@@ -36,8 +39,10 @@ function LoginForm() {
     <div className="w-full md:w-[608px] rounded-md bg-white p-4">
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="flex flex-col gap-4">
-          <h2 className="text-3xl text-brand-500">Login</h2>
-          <p className="text-md text-muted">
+          <h2 className="flex justify-center w-full">
+            <img src={Banner} alt="" />
+          </h2>
+          <p className="text-md text-center text-muted">
             Faça o login para acessar a plataforma
           </p>
           <TextInput
@@ -59,7 +64,7 @@ function LoginForm() {
           {error && <p className="text-red-500">{error}</p>}
 
           <Link to={FORGET_PAGE_ROUTE} className="text-brand-500 font-bold">
-            Esqueci minha senha
+            Esqueceu minha senha?
           </Link>
 
           <p className="text-muted">
