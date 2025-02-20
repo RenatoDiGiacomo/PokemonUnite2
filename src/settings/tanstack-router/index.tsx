@@ -18,6 +18,7 @@ import {
   EditExercisesRoute,
   ListExercisesRoute,
 } from '@features/exercises/pages'
+import { ListUsersRoute } from '@features/users/pages'
 
 const rootRoute = createRootRoute({
   component: () => (
@@ -40,6 +41,7 @@ const routeTree = rootRoute.addChildren([
     ListExercisesRoute,
     CreateExercisesRoute,
     EditExercisesRoute,
+    ListUsersRoute
   ]),
 ])
 

@@ -33,7 +33,7 @@ export function AuthProvider({ children }: { readonly children: ReactNode }) {
   const { handle, error, loading } = usePromise()
 
   const signIn = async (email: string, password: string) => {
-    if (email !== undefined && password == undefined) {
+    if (email !== undefined && password !== undefined) {
       await handle(async () => {
         await authService.login(email, password)
         setAuthenticated(true)

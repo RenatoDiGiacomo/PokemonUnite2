@@ -4,7 +4,7 @@ import { PrivateRoutes } from '@shared/layouts/PrivateLayout'
 function ListUsersPage() {
   return (
     <div className="p-2">
-      <h3>Listagem de usuários</h3>
+      <h3>Página Inicial</h3>
     </div>
   )
 }

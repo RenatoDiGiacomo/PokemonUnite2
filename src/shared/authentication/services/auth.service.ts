@@ -2,6 +2,7 @@ import { AuthUser, UserRoles } from '../types'
 
 export default {
   async login(email: string, password: string): Promise<void> {
+
     if (email !== 'admin@email.com' || password !== 'senai@134') {
       throw new Error('Usuário ou senha inválidos')
     }
