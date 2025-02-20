@@ -16,7 +16,7 @@ function Menu({ opened, toggle }: Readonly<MenuProps>) {
         onClick={toggle}
       ></div>
       <aside
-        className={`bg-white h-full transition-all w-72 absolute ${opened ? '-left-72' : 'left-0'} md:relative md:left-0 z-50`}
+        className={`bg-black h-full transition-all w-72 absolute ${opened ? '-left-72' : 'left-0'} md:relative md:left-0 z-50`}
       >
         <Logo />
         <div className="flex flex-col pt-6">

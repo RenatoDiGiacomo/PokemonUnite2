@@ -8,10 +8,10 @@ interface HeaderProps {
 
 function Header({ toggle }: Readonly<HeaderProps>) {
   return (
-    <header className="bg-white px-12 py-6 h-24 flex justify-between items-center border-b">
+    <header className="bg-secondary-100 px-12 py-6 h-24 flex justify-between items-center border-b">
       <div className="hidden md:block"></div>
       <button
-        className="md:hidden text-2xl text-brand-600"
+        className="md:hidden text-2xl text-secondary-600"
         type="button"
         onClick={toggle}
       >
